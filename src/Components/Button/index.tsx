@@ -1,4 +1,5 @@
 import { Digimon } from "../../Provider/DigimonsProvider";
+import { ButtonComponent } from "./style";
 
 interface ButtonProps {
   digimon: Digimon;
@@ -7,6 +8,8 @@ interface ButtonProps {
 }
 
 function Button({ content, func, digimon }: ButtonProps) {
-  return <button onClick={() => func(digimon)}>{content}</button>;
+  return (
+    <ButtonComponent onClick={() => func(digimon)}>{content}</ButtonComponent>
+  );
 }
 export default Button;

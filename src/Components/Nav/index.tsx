@@ -1,15 +1,12 @@
-import { Link } from "react-router-dom";
+import { Lista, Menu } from "./style";
 
 const NavigationBar = () => {
   return (
-    <ul>
-      <li>
-        <Link to="/">Digimons</Link>
-      </li>
-      <li>
-        <Link to="/favorites">Favoritos</Link>
-      </li>
-    </ul>
+    <Lista>
+      <Menu to="/">Digimons</Menu>
+
+      <Menu to="/favorites">Favoritos</Menu>
+    </Lista>
   );
 };
 export default NavigationBar;

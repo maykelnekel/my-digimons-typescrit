@@ -1,5 +1,6 @@
 import { Digimon } from "../../Provider/DigimonsProvider";
 import Button from "../Button";
+import { CardContainer, Image, Level, Name } from "./style";
 
 interface DigimonCardProps {
   digimon: Digimon;
@@ -10,16 +11,18 @@ interface DigimonCardProps {
 const Card = ({ digimon, func, isFavorite }: DigimonCardProps) => {
   const { name, img, level } = digimon;
   return (
-    <div>
-      <h1>{name}</h1>
-      <img src={img} />
-      <h3>{level}</h3>
+    <CardContainer>
+      <Name>{name}</Name>
+      <Image src={img} />
+      <Level>
+        Level: <span>{level}</span>
+      </Level>
       {isFavorite ? (
         <Button content="Remover" func={func} digimon={digimon}></Button>
       ) : (
         <Button content="Adicionar" func={func} digimon={digimon}></Button>
       )}
-    </div>
+    </CardContainer>
   );
 };
 export default Card;
